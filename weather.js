@@ -10,6 +10,7 @@ let daysWeather = [
 let weatherTable = document.getElementById("weather-table");
 
 daysWeather.forEach((day) => {
+  let tbody = document.createElement("tbody");
   let tr = document.createElement("tr");
   let dayTD = document.createElement("td");
   let temperatureTD = document.createElement("td");
@@ -20,7 +21,9 @@ daysWeather.forEach((day) => {
   tr.appendChild(dayTD);
   tr.appendChild(temperatureTD);
   tr.appendChild(rainfallTD);
-  weatherTable.appendChild(tr);
+  tbody.appendChild(tr);
+
+  weatherTable.appendChild(tbody);
 });
 
 let sum = daysWeather.reduce((acc, curr) => {
